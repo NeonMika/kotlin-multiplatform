@@ -1,4 +1,3 @@
-import kotlin.time.TimeMark
 import kotlin.time.TimeSource
 
 fun main() {
@@ -15,13 +14,11 @@ fun main() {
     println("Initial state:")
     game.print()
 
-    game.step(100)
-    game.step(100)
-    game.step(100)
-    game.step(100)
-    game.step(100)
+    repeat(500) {
+        game.step()
+    }
 
     println("State after 500 steps:")
     game.print()
-    println("### Elapsed time: ${start.elapsedNow().inWholeNanoseconds}")
+    println("### Elapsed time: ${start.elapsedNow().inWholeMicroseconds}")
 }
